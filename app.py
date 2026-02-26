@@ -20,7 +20,7 @@ age_model, gender_model = load_models()
 
 # Preprocess function
 def preprocess_face(face_img):
-    face = cv2.resize(face_img, (128, 128))
+    face = cv2.resize(face_img, (64, 64))
     face = face / 255.0
     face = np.expand_dims(face, axis=0)
     return face
@@ -77,4 +77,5 @@ if uploaded_file:
     st.write(f"**Age Range:** {age}")
     st.write(f"**Hair Length:** {hair}")
     st.write(f"**Final Gender:** {gender}")
+
     st.write(f"**Age Confidence:** {conf:.2f}")
